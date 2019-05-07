@@ -45,4 +45,22 @@ loop.close()
 def index(request):
 	return templates.TemplateResponse('index.html', {'request': request})
 
+@app.route('/upload', methods=['POST'])
+async def upload(request):
+	if request.method == "POST":
+		await setup_LongRunningFunction()
+		data = 'Hello World 1'
+		return PlainTextResponse(data)
 
+@app.route('/showPic', methods=['GET', 'POST'])
+async def ShowPic(request):
+	if request.method == 'GET':
+		data = 'Hello World 1'
+		return PlainTextResponse(data)
+	else:
+		data = 'Hello World 2'
+		return PlainTextResponse(data)
+	
+	
+if __name__ == '__main__':
+	if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
