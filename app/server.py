@@ -55,10 +55,10 @@ async def upload(request):
 @app.route('/showPic', methods=['GET', 'POST'])
 async def ShowPic(request):
 	if request.method == 'GET':
-		data = 'Hello World 1'
+		data = 'Hello World 2'
 		return PlainTextResponse(data)
 	else:
-		data = 'Hello World 2'
+		data = 'Hello World 3'
 		return PlainTextResponse(data)
 	
 	
