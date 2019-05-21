@@ -8,6 +8,7 @@ import uvicorn, aiohttp, asyncio
 from io import BytesIO
 import time
 from starlette.templating import Jinja2Templates
+from starlette.background import BackgroundTask
 
 
 
@@ -33,6 +34,10 @@ async def LongRunningFunction():
 async def setup_LongRunningFunction():
 	result = await LongRunningFunction()
 	return result
+
+async def send_welcome_email(_sec):
+	time.sleep(_sec)
+	return 'finished'
 ####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<
 
 loop = asyncio.get_event_loop()
@@ -54,7 +59,8 @@ async def upload(request):
 @app.route('/showPic', methods=['GET', 'POST'])
 async def ShowPic(request):
 	if request.method == 'GET':
-		await setup_LongRunningFunction()
+		#await setup_LongRunningFunction()		
+		task = BackgroundTask(send_welcome_email, _sec=20)
 		data = 'Hello World 2'
 		return PlainTextResponse(data)
 	else:
