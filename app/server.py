@@ -63,12 +63,18 @@ async def ShowPic(request):
 	if request.method == 'GET':
 		#await setup_LongRunningFunction()		
 		task = BackgroundTask(send_welcome_email, _sec=20)
-		message = {'status': 'Signup successful'}
+		message = {'status': 'Visit: https://gexvostarlette.onrender.com/myResult'}
 		return JSONResponse(message, background=task)
 		#data = 'Hello World 2'
 		#return PlainTextResponse(data)
 	else:
 		data = 'Hello World 3'
+		return PlainTextResponse(data)
+	
+@app.route('/myResult', methods=['GET'])
+async def upload(request):
+	if request.method == "GET":
+		data = 'My Result'
 		return PlainTextResponse(data)
 	
 	
