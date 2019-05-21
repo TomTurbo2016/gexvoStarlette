@@ -29,7 +29,7 @@ app.mount('/static', StaticFiles(directory='app/static'))
 
 ####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FUNCTIONS~~~~~~~~~~~~~~~~~~~~~~~~~~>
 async def LongRunningFunction():
-	time.sleep(20)
+	#time.sleep(20)
 	return 'finished'
 
 async def setup_LongRunningFunction():
