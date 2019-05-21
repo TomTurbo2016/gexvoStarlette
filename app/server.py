@@ -38,7 +38,8 @@ async def setup_LongRunningFunction():
 
 async def send_welcome_email(_sec):
 	#time.sleep(_sec)
-	webbrowser.open('https://www.python.org', new=0, autoraise=True)
+	#webbrowser.open('https://www.python.org', new=0, autoraise=True)
+	webbrowser.open_new_tab('https://www.python.org')
 ####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<
 
 loop = asyncio.get_event_loop()
