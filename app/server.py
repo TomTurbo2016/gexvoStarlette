@@ -1,6 +1,7 @@
 from starlette.applications import Starlette
 from starlette.responses import JSONResponse
 import uvicorn
+import sys
 import time
 
 app = Starlette(debug=True)
