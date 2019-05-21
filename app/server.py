@@ -48,13 +48,13 @@ def index(request):
 @app.route('/upload', methods=['POST'])
 async def upload(request):
 	if request.method == "POST":
-		await setup_LongRunningFunction()
 		data = 'Hello World 1'
 		return PlainTextResponse(data)
 
 @app.route('/showPic', methods=['GET', 'POST'])
 async def ShowPic(request):
 	if request.method == 'GET':
+		await setup_LongRunningFunction()
 		data = 'Hello World 2'
 		return PlainTextResponse(data)
 	else:
