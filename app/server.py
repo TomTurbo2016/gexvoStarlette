@@ -37,7 +37,7 @@ async def setup_LongRunningFunction():
 	return result
 
 async def send_welcome_email(_sec):
-	time.sleep(_sec)
+	#time.sleep(_sec)
 	webbrowser.open('https://www.python.org')
 ####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<
 
