@@ -62,8 +62,10 @@ async def ShowPic(request):
 	if request.method == 'GET':
 		#await setup_LongRunningFunction()		
 		task = BackgroundTask(send_welcome_email, _sec=20)
-		data = 'Hello World 2'
-		return PlainTextResponse(data)
+		message = {'status': 'Signup successful'}
+		return JSONResponse(message, background=task)
+		#data = 'Hello World 2'
+		#return PlainTextResponse(data)
 	else:
 		data = 'Hello World 3'
 		return PlainTextResponse(data)
