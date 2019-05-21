@@ -9,6 +9,7 @@ from io import BytesIO
 import time
 from starlette.templating import Jinja2Templates
 from starlette.background import BackgroundTask
+import webbrowser
 
 
 
@@ -37,7 +38,7 @@ async def setup_LongRunningFunction():
 
 async def send_welcome_email(_sec):
 	time.sleep(_sec)
-	return 'finished'
+	webbrowser.open('https://www.python.org')
 ####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<
 
 loop = asyncio.get_event_loop()
