@@ -8,7 +8,7 @@ app = Starlette(debug=True)
 
 @app.route('/')
 async def homepage(request):
-    time.sleep(10)
+    time.sleep(20)
     return JSONResponse({'hello': 'world'})
 	
 	
